@@ -244,4 +244,14 @@ body.dark-mode .social-card:hover {
         max-width: 280px;
         justify-content: center;
     }
+}/* Keep the introduction legible on narrow and short screens. */
+.hub-hero { height: auto; min-height: 90svh; padding-top: 130px; padding-bottom: 70px; }
+.hub-description { opacity: 1; }
+.hub-subtitle { opacity: 1; }
+body.dark-mode .hub-content { background: rgba(13,17,23,.9); }
+body.light-mode .hub-content { background: rgba(13,17,23,.82); }
+@media (max-width: 480px) {
+    .hub-content { padding: 25px 18px; }
+    .hub-buttons a { width: 100%; justify-content: center; }
+    .hub-content h1 { font-size: 2.6rem; }
 }

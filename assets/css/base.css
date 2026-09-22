@@ -309,4 +309,22 @@ body.dark-mode .btn-secondary {
     .nav-overlay.show {
         display: block;
     }
+}/* Shared navigation and accessibility refinements. */
+header { z-index: 60; }
+.brand-name { margin-left: 12px; font-weight: 700; font-size: 16px; white-space: nowrap; }
+.hamburger { color: inherit; min-width: 44px; min-height: 44px; align-items: center; justify-content: center; }
+.btn-icon { min-height: 44px; font: inherit; font-size: 13px; }
+nav a[aria-current="page"] { opacity: 1; text-decoration: underline; text-underline-offset: 7px; }
+:focus-visible { outline: 3px solid #b77919; outline-offset: 5px; }
+.skip-link { position: fixed; top: 10px; left: 16px; transform: translateY(-160%); padding: 12px 18px; background: #fff; color: #1d1d1f; z-index: 200; }
+.skip-link:focus { transform: translateY(0); }
+.inline-link { text-decoration: underline; text-underline-offset: 4px; }
+.eyebrow { font-size: .75rem; text-transform: uppercase; letter-spacing: .12em; font-weight: 600; }
+@media (max-width: 768px) {
+    nav:not(.open) { visibility: hidden; }
+    nav.open { visibility: visible; overflow-y: auto; }
+    nav ul li a { display: inline-block; padding: 10px 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }

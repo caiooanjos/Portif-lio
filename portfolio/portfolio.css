@@ -73,4 +73,18 @@ nav.fixed {
 /* Gradient Hero overrides */
 .hero-gradient {
     background: linear-gradient(to top right, var(--accent-glow), rgba(59, 130, 246, 0.2));
-}
+}.professional-note { min-height: 390px; padding: 48px 40px; border-left: 3px solid var(--accent); background: var(--bg-card); border-radius: 0 20px 20px 0; position: relative; }
+.professional-note h2 { font-size: 2.7rem; line-height: 1.15; margin: 35px 0 24px; font-weight: 700; }
+.professional-note p { color: var(--text-sec); line-height: 1.8; margin-bottom: 28px; }
+.professional-note a { text-decoration: underline; text-underline-offset: 4px; }
+.project-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; }
+.project-diagram { padding: 36px 28px; background: var(--accent-light); color: var(--text-main); font: 600 1rem/1.7 monospace; border-bottom: 1px solid var(--border-color); }
+.project-content { padding: 28px; }
+.project-content h3 { font-size: 1.6rem; font-weight: 700; margin: 14px 0 24px; }
+.project-content dt { font-weight: 700; margin-top: 18px; }
+.project-content dd { color: var(--text-sec); line-height: 1.7; margin: 5px 0 0; }
+.project-tags { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; margin: 24px 0; }
+.project-tags li { padding: 5px 10px; border: 1px solid var(--border-color); border-radius: 6px; font-size: .8rem; }
+body.dark-mode .bg-accent.text-white { color: #0d1117; }
+#servicos .grid > div:nth-child(2) { border-top: 3px solid var(--accent); }
+#projects-container { align-items: start; }

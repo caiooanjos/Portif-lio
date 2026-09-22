@@ -1,0 +1,69 @@
+[
+  {
+    "id": 3,
+    "category": "sec",
+    "title": "Auditoria OWASP Top 10",
+    "description": "Relatório completo de Pentest realizado em uma aplicação financeira simulada. Identificação e correção de XSS e SQLi.",
+    "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2070&auto=format&fit=crop",
+    "tags": [
+      "Burp Suite",
+      "Nmap",
+      "Metasploit"
+    ],
+    "actionText": "Em breve",
+    "link": "#",
+    "icon": "clock",
+    "status": "draft",
+    "note": "Registro legado sem evidência publicada. Texto e conclusão não confirmados; revisar antes de publicar."
+  },
+  {
+    "id": 4,
+    "category": "sec",
+    "title": "Bug Bounty: E-commerce",
+    "description": "Descoberta de vulnerabilidade de IDOR (Insecure Direct Object Reference) em um e-commerce em ambiente de testes.",
+    "image": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=2070&auto=format&fit=crop",
+    "tags": [
+      "Análise de Código",
+      "Fuzzing"
+    ],
+    "actionText": "Em breve",
+    "link": "#",
+    "icon": "clock",
+    "status": "draft",
+    "note": "Registro legado sem evidência publicada. Texto e conclusão não confirmados; revisar antes de publicar."
+  },
+  {
+    "id": 5,
+    "category": "osint",
+    "title": "Caso 'Phantom': Rastreio de Phishing",
+    "description": "Investigação digital utilizando fontes abertas para mapear a infraestrutura e a origem de uma campanha de phishing corporativo.",
+    "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop",
+    "tags": [
+      "Maltego",
+      "Shodan",
+      "Análise de Metadados"
+    ],
+    "actionText": "Em breve",
+    "link": "#",
+    "icon": "clock",
+    "status": "draft",
+    "note": "Registro legado sem evidência publicada. Texto e conclusão não confirmados; revisar antes de publicar."
+  },
+  {
+    "id": 6,
+    "category": "osint",
+    "title": "Auditoria de Vazamento de Dados",
+    "description": "Mapeamento da exposição digital de uma empresa fictícia na Deep/Dark Web e repositórios públicos, com relatório de mitigação.",
+    "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=2070&auto=format&fit=crop",
+    "tags": [
+      "Sherlock",
+      "theHarvester",
+      "Dorks"
+    ],
+    "actionText": "Em breve",
+    "link": "#",
+    "icon": "clock",
+    "status": "draft",
+    "note": "Registro legado sem evidência publicada. Texto e conclusão não confirmados; revisar antes de publicar."
+  }
+]
