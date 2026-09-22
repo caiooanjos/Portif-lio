@@ -1,0 +1,262 @@
+/* ========================================
+   LAB.CSS — Estilos específicos do Laboratório
+======================================== */
+
+/* Hero Lab */
+.lab-hero {
+    position: relative;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 10% 80px;
+    overflow: hidden;
+}
+
+.lab-hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+body.light-mode .lab-hero-bg {
+    background: linear-gradient(135deg, #e8f4f8 0%, #d1ecf1 50%, #f5f5f7 100%);
+}
+
+body.dark-mode .lab-hero-bg {
+    background: linear-gradient(135deg, #0d1117 0%, #1a2332 50%, #0d1117 100%);
+}
+
+.lab-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 650px;
+}
+
+.lab-hero-content h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin: 0 0 20px;
+    letter-spacing: -1px;
+}
+
+body.dark-mode .lab-hero-content h1 {
+    color: var(--accent-cyan);
+}
+
+.lab-hero-text {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    opacity: 0.85;
+    margin: 0;
+}
+
+/* ========================================
+   TOPICS SECTION
+======================================== */
+
+.lab-topics {
+    padding: 80px 10%;
+}
+
+.lab-section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 0 0 50px;
+}
+
+body.dark-mode .lab-section-title {
+    color: var(--accent-cyan);
+}
+
+.lab-topics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.lab-topic-card {
+    padding: 35px 30px;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+body.light-mode .lab-topic-card {
+    background-color: #ffffff;
+    border: 1px solid #e5e5e7;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+body.dark-mode .lab-topic-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.lab-topic-card:hover {
+    transform: translateY(-5px);
+}
+
+body.light-mode .lab-topic-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .lab-topic-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.lab-topic-icon {
+    margin-bottom: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+}
+
+body.light-mode .lab-topic-icon {
+    background-color: #e8f4f8;
+    color: #3e6a8e;
+}
+
+body.dark-mode .lab-topic-icon {
+    background-color: rgba(149, 253, 245, 0.1);
+    color: var(--accent-cyan);
+}
+
+.lab-topic-card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0 0 12px;
+}
+
+body.dark-mode .lab-topic-card h3 {
+    color: var(--accent-cyan);
+}
+
+.lab-topic-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    opacity: 0.75;
+    margin: 0;
+}
+
+/* ========================================
+   SOCIAL SECTION
+======================================== */
+
+.lab-social {
+    padding: 60px 10% 100px;
+    text-align: center;
+}
+
+.lab-social-grid {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.lab-social-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 22px 30px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s, box-shadow 0.3s;
+    min-width: 240px;
+}
+
+body.light-mode .lab-social-card {
+    background-color: #ffffff;
+    border: 1px solid #e5e5e7;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+body.dark-mode .lab-social-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.lab-social-card:hover {
+    transform: translateY(-3px);
+}
+
+body.light-mode .lab-social-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .lab-social-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.lab-social-info {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.lab-social-name {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.lab-social-desc {
+    font-size: 0.85rem;
+    opacity: 0.6;
+    margin-top: 2px;
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 768px) {
+    .lab-hero {
+        padding: 100px 5% 60px;
+        min-height: 50vh;
+    }
+
+    .lab-hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .lab-hero-text {
+        font-size: 1rem;
+    }
+
+    .lab-topics {
+        padding: 60px 5%;
+    }
+
+    .lab-section-title {
+        font-size: 1.75rem;
+    }
+
+    .lab-topics-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .lab-social {
+        padding: 40px 5% 80px;
+    }
+
+    .lab-social-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .lab-social-card {
+        width: 100%;
+        max-width: 320px;
+    }
+}

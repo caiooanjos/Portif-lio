@@ -1,0 +1,76 @@
+/* ========================================
+   PORTFOLIO.CSS — Estilos e Cores para o Novo Portfólio Integrado
+   Integração do Design Tailwind com as Cores de base.css
+======================================= */
+
+body.light-mode {
+    --bg-main: #f5f5f7;
+    --bg-card: #ffffff;
+    --bg-card-hover: #f1f1f3;
+    --border-color: #e5e5e7;
+    --text-main: #1d1d1f;
+    --text-sec: #424245;
+    --text-mut: #6e6e73;
+    --accent: #3e6a8e;        /* Substitui o Emerald do Tailwind no modo claro */
+    --accent-hover: #2c3e50;
+    --accent-light: rgba(62, 106, 142, 0.1); /* Emerald 500/10 */
+    --accent-glow: rgba(62, 106, 142, 0.2); 
+    --glass-bg: rgba(255, 255, 255, 0.8);
+}
+
+body.dark-mode {
+    --bg-main: #0d1117; 
+    --bg-card: #1c2128; /* Fundo minimamente mais claro para as caixas/cards destacarem melhor do fundo e não ficarem no escuro */
+    --bg-card-hover: rgba(255, 255, 255, 0.08); /* Foco um pouco mais vivo ao passar o mouse */
+    --border-color: #3b424d; /* Bordas um milímetro mais visíveis */
+    --text-main: #ffffff; /* Brancão puro pra garantir leitura de títulos */
+    --text-sec: #c9d1d9; /* Cinza prateado muito mais claro para textos menores */
+    --text-mut: #a3a3a3;
+    --accent: var(--accent-cyan); /* #95fdf5 */
+    --accent-hover: #75dbd3;
+    --accent-light: rgba(149, 253, 245, 0.15); /* Mais luz de glow */
+    --accent-glow: rgba(149, 253, 245, 0.25);
+    --glass-bg: rgba(13, 17, 23, 0.8);
+}
+
+/* Base resets handled by Tailwind but applied globally */
+::selection {
+    background-color: var(--accent-glow);
+}
+
+/* Fix z-index for fixed navbar */
+nav.fixed {
+    z-index: 100;
+}
+
+/* Animações e efeitos personalizados (mantidos do design novo) */
+@keyframes spin-slow {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes spin-slow-reverse {
+    from {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+}
+
+.animate-spin-slow {
+    animation: spin-slow 10s linear infinite;
+}
+
+.animate-spin-reverse-slow {
+    animation: spin-slow-reverse 15s linear infinite;
+}
+
+/* Gradient Hero overrides */
+.hero-gradient {
+    background: linear-gradient(to top right, var(--accent-glow), rgba(59, 130, 246, 0.2));
+}

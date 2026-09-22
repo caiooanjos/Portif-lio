@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caio Anjos - Portfólio DEV.SEC</title>
+    <meta name="description"
+        content="Portfólio de Caio Anjos — Desenvolvimento, Segurança da Informação e Investigação Digital.">
+
+    <!-- Configs de Estilo -->
+    <link rel="stylesheet" href="../assets/css/base.css" />
+    <link rel="stylesheet" href="portfolio.css" />
+
+    <!-- Tailwind para Layout estrutural (com variáveis de cor) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        main: 'var(--bg-main)',
+                        card: 'var(--bg-card)',
+                        cardHover: 'var(--bg-card-hover)',
+                        accent: 'var(--accent)',
+                        accentHover: 'var(--accent-hover)',
+                        accentLight: 'var(--accent-light)',
+                        borderMod: 'var(--border-color)',
+                        glass: 'var(--glass-bg)',
+                    },
+                    textColor: {
+                        main: 'var(--text-main)',
+                        sec: 'var(--text-sec)',
+                        mut: 'var(--text-mut)',
+                        accent: 'var(--accent)'
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="dark-mode bg-main text-main font-main transition-colors duration-300">
+    <div class="nav-overlay"></div>
+
+    <!-- HEADER INTEGRADO DO PROJETO ANTIGO -->
+    <header>
+        <div class="logo-container">
+            <a href="/">
+                <img src="../assets/img/Logo.png" alt="Logo" class="logo">
+            </a>
+        </div>
+        <button class="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <nav>
+            <ul>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#servicos">Proposta</a></li>
+                <li><a href="#portfolio">Portfólio</a></li>
+                <li><a href="/lab/">Laboratório</a></li>
+                <li>
+                    <a href="https://caioanjos.online" target="_blank" rel="noopener noreferrer">
+                        <i data-lucide="globe" class="w-5 h-5"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/caiooanjos" target="_blank" rel="noopener noreferrer">
+                        <i data-lucide="github" class="w-5 h-5"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/caiooanjo/" target="_blank" rel="noopener noreferrer">
+                        <i data-lucide="linkedin" class="w-5 h-5"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://instagram.com/oanjoscaio" target="_blank" rel="noopener noreferrer">
+                        <i data-lucide="instagram" class="w-5 h-5"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/@ocaioanjos" target="_blank" rel="noopener noreferrer">
+                        <i data-lucide="youtube" class="w-5 h-5"></i>
+                    </a>
+                </li>
+                <li>
+                    <button id="theme-toggle" class="btn-icon" aria-label="Alternar Tema">
+                        <i data-lucide="sun" class="w-6 h-6 sun-icon"></i>
+                        <i data-lucide="moon" class="w-6 h-6 moon-icon"></i>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="overflow-x-hidden pt-20">
+        <!-- HERO SECTION -->
+        <section class="relative pt-20 pb-20 lg:pt-32 lg:pb-32 px-6">
+            <div
+                class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-accentLight blur-[120px] rounded-full pointer-events-none">
+            </div>
+
+            <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center relative z-10">
+                <div class="space-y-8">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-card border border-borderMod text-sm font-medium text-accent hover:border-accent transition-colors">
+                        <span class="relative flex h-2 w-2">
+                            <span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-accentHover"></span>
+                        </span>
+                        Disponível para novos projetos
+                    </div>
+
+                    <h1 class="text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] text-main">
+                        Desenvolvo. <br />
+                        <span class="text-accent">Protejo.</span>
+                        <br />
+                        Investigo.
+                    </h1>
+
+                    <p class="text-lg text-sec leading-relaxed max-w-lg">
+                        Cursando Análise e Desenvolvimento de Sistemas, com foco prático em automação, segurança e
+                        desenvolvimento web. Especialista em unir código limpo com
+                        Segurança da Informação e Investigação Digital (OSINT).
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#servicos"
+                            class="px-8 py-4 bg-accent text-white rounded-lg font-bold hover:bg-accentHover transition-colors flex items-center justify-center gap-2">
+                            Ver minhas soluções
+                            <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#contato"
+                            class="px-8 py-4 bg-card text-main border border-borderMod rounded-lg font-bold hover:bg-cardHover transition-colors flex items-center justify-center gap-2">
+                            Falar com o Caio
+                        </a>
+                    </div>
+                </div>
+
+                <div class="relative hidden lg:block">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-tr from-accentLight to-transparent rounded-2xl blur-2xl">
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2070&auto=format&fit=crop"
+                        alt="Cyber Security Concept"
+                        class="relative z-10 rounded-2xl border border-borderMod shadow-2xl object-cover h-[500px] w-full" />
+                    <div
+                        class="absolute -bottom-6 -left-6 bg-card border border-borderMod p-4 rounded-xl shadow-xl flex items-center gap-4 z-20">
+                        <div class="p-3 bg-accentLight text-accent rounded-lg">
+                            <i data-lucide="shield-check" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm text-sec font-medium">Foco em</p>
+                            <p class="text-main font-bold">Segurança & OSINT</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO DE PILARES -->
+        <section id="servicos" class="py-24 bg-cardHover border-y border-borderMod relative">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-main">O que eu trago para a mesa?</h2>
+                    <p class="text-sec text-lg">
+                        A maioria dos desenvolvedores apenas cria o sistema. Eu crio o sistema, garanto que os dados
+                        estejam seguros e tenho as habilidades para rastrear qualquer anomalia.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div
+                        class="bg-card border border-borderMod p-8 rounded-2xl hover:border-accent transition-colors group relative overflow-hidden">
+                        <div class="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
+                            <i data-lucide="terminal" class="w-8 h-8 text-accent"></i>
+                        </div>
+                        <div class="mb-6 inline-block p-4 bg-bg-main rounded-xl border border-borderMod">
+                            <i data-lucide="terminal" class="w-8 h-8 text-accent"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-main">Desenvolvimento de Sistemas</h3>
+                        <p class="text-sec leading-relaxed">
+                            Criação de aplicações web e sistemas sob medida. Foco em arquitetura escalável, código limpo
+                            e performance utilizando as tecnologias mais recentes do mercado.
+                        </p>
+                    </div>
+
+                    <div
+                        class="bg-card border border-borderMod p-8 rounded-2xl hover:border-accent transition-colors group relative overflow-hidden">
+                        <div class="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
+                            <i data-lucide="shield-check" class="w-8 h-8 text-accent"></i>
+                        </div>
+                        <div class="mb-6 inline-block p-4 bg-bg-main rounded-xl border border-borderMod">
+                            <i data-lucide="shield-check" class="w-8 h-8 text-accent"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-main">Segurança da Informação</h3>
+                        <p class="text-sec leading-relaxed">
+                            Aplicações funcionais não bastam; elas precisam ser impenetráveis. Aplico boas práticas de
+                            segurança, análise de vulnerabilidades e blindagem de dados.
+                        </p>
+                    </div>
+
+                    <div
+                        class="bg-card border border-borderMod p-8 rounded-2xl hover:border-accent transition-colors group relative overflow-hidden">
+                        <div class="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
+                            <i data-lucide="search" class="w-8 h-8 text-accent"></i>
+                        </div>
+                        <div class="mb-6 inline-block p-4 bg-bg-main rounded-xl border border-borderMod">
+                            <i data-lucide="search" class="w-8 h-8 text-accent"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-main">Investigação Digital & OSINT</h3>
+                        <p class="text-sec leading-relaxed">
+                            Inteligência de Fontes Abertas. Capacidade de rastrear informações públicas, auditar
+                            vazamentos e realizar investigações digitais para resolução de incidentes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PORTFÓLIO & ESTUDOS DE CASO -->
+        <section id="portfolio" class="py-24 px-6 relative">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-main">Em Ação</h2>
+                    <p class="text-sec text-lg">
+                        Sistemas que desenvolvi, vulnerabilidades que encontrei e casos que investiguei.
+                    </p>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-2 mb-12" id="portfolio-tabs">
+                    <button onclick="setActiveTab('dev')"
+                        class="tab-btn bg-accent text-white px-6 py-3 rounded-lg font-medium transition-all flex items-center gap-2"
+                        data-tab="dev">
+                        <i data-lucide="terminal" class="w-4 h-4"></i> Sistemas & Dev
+                    </button>
+                    <button onclick="setActiveTab('sec')"
+                        class="tab-btn bg-card text-sec hover:bg-cardHover border border-borderMod px-6 py-3 rounded-lg font-medium transition-all flex items-center gap-2"
+                        data-tab="sec">
+                        <i data-lucide="shield-check" class="w-4 h-4"></i> Segurança (Pentest)
+                    </button>
+                    <button onclick="setActiveTab('osint')"
+                        class="tab-btn bg-card text-sec hover:bg-cardHover border border-borderMod px-6 py-3 rounded-lg font-medium transition-all flex items-center gap-2"
+                        data-tab="osint">
+                        <i data-lucide="search" class="w-4 h-4"></i> Casos OSINT
+                    </button>
+                </div>
+
+                <!-- Grid de Projetos será injetado pelo portfolio.js -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8" id="projects-container">
+                </div>
+            </div>
+        </section>
+
+        <!-- SOBRE MIM & TECH STACK -->
+        <section id="about" class="py-24 px-6 bg-cardHover border-y border-borderMod">
+            <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+                <div class="order-2 lg:order-1 space-y-8">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-main">Por que me contratar?</h2>
+                        <div class="space-y-4 text-sec leading-relaxed text-lg">
+                            <p>
+                                Meu nome é <strong>Caio Anjos</strong>. Estou me formando em <em>Análise e
+                                    Desenvolvimento
+                                    de Sistemas</em>, mas minha paixão vai além de apenas fazer o código funcionar.
+                            </p>
+                            <p>
+                                No mundo digital de hoje, um código vulnerável é um passivo financeiro gigantesco. Por
+                                isso,
+                                mergulhei nos estudos de <strong>Segurança da Informação</strong>. Meu objetivo é
+                                desenvolver sistemas robustos desde a concepção (Security by Design).
+                            </p>
+                            <p>
+                                E como um "ás na manga", possuo conhecimentos avançados em <strong>OSINT (Open-Source
+                                    Intelligence)</strong>, o que me permite atuar em investigações digitais, análise de
+                                perfis, auditoria de vazamento de dados corporativos e prevenção a fraudes.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-sm font-bold uppercase tracking-wider text-mut mb-4">Ferramentas & Hard Skills
+                        </h3>
+                        <div class="flex flex-wrap gap-3">
+                            <div
+                                class="flex items-center gap-2 px-4 py-2 bg-card border border-borderMod rounded-lg text-sec hover:border-accent transition-colors">
+                                <span class="text-accent"><i data-lucide="code-2" class="w-5 h-5"></i></span>
+                                <span class="font-medium text-sm">HTML / CSS / JS</span>
+                            </div>
+                            <div
+                                class="flex items-center gap-2 px-4 py-2 bg-card border border-borderMod rounded-lg text-sec hover:border-accent transition-colors">
+                                <span class="text-accent"><i data-lucide="terminal" class="w-5 h-5"></i></span>
+                                <span class="font-medium text-sm">Python</span>
+                            </div>
+                            <div
+                                class="flex items-center gap-2 px-4 py-2 bg-card border border-borderMod rounded-lg text-sec hover:border-accent transition-colors">
+                                <span class="text-accent"><i data-lucide="database" class="w-5 h-5"></i></span>
+                                <span class="font-medium text-sm">SQL</span>
+                            </div>
+                            <div
+                                class="flex items-center gap-2 px-4 py-2 bg-card border border-borderMod rounded-lg text-sec hover:border-accent transition-colors">
+                                <span class="text-accent"><i data-lucide="file-text" class="w-5 h-5"></i></span>
+                                <span class="font-medium text-sm">Design Sec.</span>
+                            </div>
+                            <div
+                                class="flex items-center gap-2 px-4 py-2 bg-card border border-borderMod rounded-lg text-sec hover:border-accent transition-colors">
+                                <span class="text-accent"><i data-lucide="terminal" class="w-5 h-5"></i></span>
+                                <span class="font-medium text-sm">Linux</span>
+                            </div>
+                            <div
+                                class="flex items-center gap-2 px-4 py-2 bg-card border border-borderMod rounded-lg text-sec hover:border-accent transition-colors">
+                                <span class="text-accent"><i data-lucide="cpu" class="w-5 h-5"></i></span>
+                                <span class="font-medium text-sm">Docker</span>
+                            </div>
+                            <div
+                                class="flex items-center gap-2 px-4 py-2 bg-card border border-borderMod rounded-lg text-sec hover:border-accent transition-colors">
+                                <span class="text-accent"><i data-lucide="lock" class="w-5 h-5"></i></span>
+                                <span class="font-medium text-sm">Pentest</span>
+                            </div>
+                            <div
+                                class="flex items-center gap-2 px-4 py-2 bg-card border border-borderMod rounded-lg text-sec hover:border-accent transition-colors">
+                                <span class="text-accent"><i data-lucide="search" class="w-5 h-5"></i></span>
+                                <span class="font-medium text-sm">OSINT & Dorks</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="order-1 lg:order-2 flex justify-center lg:justify-end">
+                    <div class="relative">
+                        <div
+                            class="w-64 h-64 md:w-80 md:h-80 rounded-full border-2 border-accentLight p-2 relative z-10 bg-main">
+                            <img src="https://souaglaia.com/wp-content/uploads/2026/03/Abstract-Profile-Photo-Instagram-Post.png"
+                                alt="Caio Anjos"
+                                class="w-full h-full object-cover rounded-full mix-blend-luminosity hover:mix-blend-normal transition-all duration-500" />
+                        </div>
+                        <div
+                            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] border border-borderMod rounded-full animate-spin-slow">
+                        </div>
+                        <div
+                            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] border border-accentLight rounded-full animate-spin-reverse-slow">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA FINAL -->
+        <section id="contato" class="py-24 relative overflow-hidden text-center">
+            <div class="absolute inset-0 bg-accentLight/50"></div>
+            <div class="max-w-4xl mx-auto px-6 relative z-10">
+                <i data-lucide="shield-check" class="w-16 h-16 text-accent mx-auto mb-6"></i>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-main">Precisa de um Dev que entenda de Segurança?
+                </h2>
+                <p class="text-xl text-sec mb-10 max-w-2xl mx-auto">
+                    Seja para construir um novo sistema blindado ou investigar vulnerabilidades no seu projeto atual,
+                    estou pronto para o desafio.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="mailto:caioanjos@souaglaia.com"
+                        class="px-8 py-4 bg-accent text-white rounded-lg font-bold hover:bg-accentHover transition-colors flex items-center justify-center gap-3 text-lg">
+                        <i data-lucide="mail" class="w-5 h-5"></i>
+                        Entrar em Contato
+                    </a>
+                    <a href="https://www.linkedin.com/in/caiooanjo/" target="_blank" rel="noreferrer"
+                        class="px-8 py-4 bg-card text-main border border-borderMod rounded-lg font-bold hover:bg-cardHover transition-colors flex items-center justify-center gap-3 text-lg">
+                        <i data-lucide="linkedin" class="w-5 h-5 text-accent"></i>
+                        Conectar no LinkedIn
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer bg-main flex flex-col md:flex-row justify-between items-center px-6">
+        <p>&copy; 2026 Caio Anjos. Desenvolvido com segurança.</p>
+        <div class="flex items-center gap-4 mt-4 md:mt-0">
+            <a href="https://caioanjos.online" class="text-sec hover:text-main transition-colors">
+                <i data-lucide="globe" class="w-6 h-6"></i>
+            </a>
+            <a href="https://github.com/caiooanjos" class="text-sec hover:text-main transition-colors">
+                <i data-lucide="github" class="w-6 h-6"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/caiooanjo/" class="text-sec hover:text-[#0A66C2] transition-colors">
+                <i data-lucide="linkedin" class="w-6 h-6"></i>
+            </a>
+            <a href="https://instagram.com/oanjoscaio" class="text-sec hover:text-[#E1306C] transition-colors">
+                <i data-lucide="instagram" class="w-6 h-6"></i>
+            </a>
+            <a href="https://www.youtube.com/@ocaioanjos" class="text-sec hover:text-[#FF0000] transition-colors">
+                <i data-lucide="youtube" class="w-6 h-6"></i>
+            </a>
+        </div>
+    </footer>
+
+    <!-- Scripts necessários para o funcionamento -->
+    <script src="../assets/js/base.js"></script>
+    <script src="portfolio.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,545 @@
+:root {
+    /* Font */
+    --font-main: 'Inter', sans-serif;
+
+    /* Light Theme */
+    --bg-light: #f5f5f7;
+    --text-main-light: #1d1d1f;
+    --text-sec-light: #424245;
+    --btn-primary-bg-light: #2c3e50;
+    /* Dark blue/slate */
+    --btn-primary-text-light: #ffffff;
+    --logo-color-light: #1d1d1f;
+
+    /* Dark Theme */
+    --bg-dark: #0d1117;
+    --text-main-dark: #f5f5f5;
+    --text-sec-dark: #8b949e;
+    --btn-primary-bg-dark: #238636;
+    /* GitHub green or a nice blue */
+    --btn-primary-text-dark: #ffffff;
+    --logo-color-dark: #ffffff;
+    --accent-cyan: #95fdf5;
+
+    /* Common */
+    --accent-blue: #3b82f6;
+    --transition-speed: 0.3s;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-main);
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+    overflow-x: hidden;
+}
+
+/* Theme Classes */
+body.light-mode {
+    background-color: var(--bg-light);
+    color: var(--text-main-light);
+}
+
+body.dark-mode {
+    background-color: var(--bg-dark);
+    color: var(--text-main-dark);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+    box-sizing: border-box;
+}
+
+.logo {
+    height: 40px;
+    transition: filter var(--transition-speed);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    font-size: 14px;
+    font-weight: 500;
+    color: inherit;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+nav ul li a:hover {
+    opacity: 1;
+}
+
+.btn-nav {
+    background-color: var(--text-main-light);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+body.dark-mode .btn-nav {
+    background-color: white;
+    color: var(--bg-dark);
+}
+
+.btn-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.sun-icon {
+    display: none;
+}
+
+.moon-icon {
+    display: block;
+}
+
+body.dark-mode .sun-icon {
+    display: block;
+}
+
+body.dark-mode .moon-icon {
+    display: none;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10%;
+    overflow: hidden;
+}
+
+/* Background Layers System */
+.hero-background-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: opacity var(--transition-speed);
+}
+
+/* TEMA CLARO - 3 Camadas */
+/* Camada 1: Background Claro */
+body.light-mode .hero-background-layer.layer-1 {
+    background-image: url('Background Claro.png');
+    z-index: 1;
+    opacity: 1;
+}
+
+/* Camada 2: Feixes de luz */
+body.light-mode .hero-background-layer.layer-2 {
+    background-image: url('Feixes de luz.png');
+    z-index: 2;
+    opacity: 0.6;
+    mix-blend-mode: overlay;
+}
+
+/* Camada 3: Não usada no tema claro */
+body.light-mode .hero-background-layer.layer-3,
+/* Camada 4: Não usada no tema claro */
+body.light-mode .hero-background-layer.layer-4 {
+    display: none;
+}
+
+/* TEMA DARK - 4 Camadas */
+/* Camada 1: Background DevSec */
+body.dark-mode .hero-background-layer.layer-1 {
+    background-image: url('Background DevSec.png');
+    z-index: 1;
+    opacity: 1;
+}
+
+/* Camada 2: Feixes de luz */
+body.dark-mode .hero-background-layer.layer-2 {
+    background-image: url('Feixes de luz.png');
+    z-index: 2;
+    opacity: 1;
+    mix-blend-mode: screen;
+    /* Efeito de luz */
+}
+
+/* Camada 3: Homem Luz de fundo */
+body.dark-mode .hero-background-layer.layer-3 {
+    background-image: url('Homem Luz de fundo.png');
+    z-index: 3;
+    opacity: 1;
+}
+
+/* Camada 4: Contraste (apenas no dark) */
+body.dark-mode .hero-background-layer.layer-4 {
+    background-image: url('Contraste.png');
+    z-index: 4;
+    opacity: 1;
+    mix-blend-mode: overlay;
+}
+
+/* Large Background Text "DEV.SEC" */
+.background-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 15vw;
+    font-weight: 900;
+    white-space: nowrap;
+    z-index: 5;
+    /* Acima das camadas de imagem */
+    pointer-events: none;
+    user-select: none;
+    color: currentColor;
+}
+
+body.light-mode .background-text {
+    color: #000;
+    opacity: 0.08;
+    text-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .background-text {
+    color: #fff;
+    opacity: 0.06;
+    text-shadow: 0 0 60px rgba(255, 255, 255, 0.2);
+}
+
+/* Content Styling */
+.content {
+    max-width: 600px;
+    z-index: 10;
+    /* Acima de tudo */
+    text-align: left;
+    margin-right: auto;
+    position: relative;
+}
+
+.content h1 {
+    font-size: 5rem;
+    font-weight: 700;
+    margin: 0 0 10px;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+}
+
+/* Cor especial para o título no dark mode */
+body.dark-mode .content h1 {
+    color: #95fdf5;
+}
+
+.content .subtitle {
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin: 0 0 20px;
+    opacity: 0.9;
+}
+
+.content .description {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    opacity: 0.7;
+    max-width: 450px;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-primary,
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+    transform: translateY(-2px);
+}
+
+/* Light Mode Buttons */
+body.light-mode .btn-primary {
+    background-color: #3e6a8e;
+    /* Muted blue from example */
+    color: white;
+}
+
+body.light-mode .btn-secondary {
+    background-color: #e2e2e5;
+    color: #1d1d1f;
+}
+
+/* Dark Mode Buttons */
+body.dark-mode .btn-primary {
+    background-color: #3e6a8e;
+    /* Keeps consistent or darker */
+    color: white;
+}
+
+body.dark-mode .btn-secondary {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    backdrop-filter: blur(10px);
+}
+
+/* ========================================
+   SEÇÃO SOBRE MIM
+======================================== */
+
+.about {
+    padding: 100px 10%;
+    position: relative;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0 0 40px;
+    text-align: center;
+}
+
+.about-intro {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    margin: 0 auto 60px;
+    max-width: 800px;
+    text-align: center;
+    opacity: 0.9;
+}
+
+/* Skills Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.skill-card {
+    padding: 30px;
+    border-radius: 12px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+body.light-mode .skill-card {
+    background-color: #ffffff;
+    border: 1px solid #e5e5e7;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+body.dark-mode .skill-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+}
+
+body.light-mode .skill-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .skill-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.skill-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0 0 20px;
+}
+
+body.dark-mode .skill-card h3 {
+    color: #95fdf5;
+}
+
+.skill-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skill-card ul li {
+    padding: 8px 0;
+    font-size: 0.95rem;
+    opacity: 0.85;
+    position: relative;
+    padding-left: 20px;
+}
+
+.skill-card ul li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+body.light-mode .skill-card ul li::before {
+    color: #3e6a8e;
+}
+
+body.dark-mode .skill-card ul li::before {
+    color: #95fdf5;
+}
+
+/* Approach Section */
+.approach-section {
+    margin-bottom: 50px;
+}
+
+.approach-section h3 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin: 0 0 30px;
+    text-align: center;
+}
+
+body.dark-mode .approach-section h3 {
+    color: #95fdf5;
+}
+
+.approach-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.approach-item {
+    padding: 20px 25px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+body.light-mode .approach-item {
+    background-color: #f8f9fa;
+    border: 1px solid #e5e5e7;
+}
+
+body.dark-mode .approach-item {
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.approach-item:hover {
+    transform: scale(1.02);
+}
+
+/* About Context */
+.about-context {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin: 0 auto;
+    max-width: 700px;
+    text-align: center;
+    opacity: 0.8;
+    font-style: italic;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    header {
+        padding: 20px;
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+
+    nav ul li:not(:last-child):not(:nth-last-child(2)) {
+        display: none;
+        /* Hide links on mobile, keep buttons */
+    }
+
+    .content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero {
+        padding: 0 5%;
+        justify-content: center;
+    }
+
+    .content {
+        text-align: center;
+        margin-right: 0;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    /* About Section Responsive */
+    .about {
+        padding: 60px 5%;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .about-intro {
+        font-size: 1rem;
+        margin-bottom: 40px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .approach-grid {
+        grid-template-columns: 1fr;
+    }
+}
