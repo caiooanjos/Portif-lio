@@ -1,90 +1,16 @@
-/* ========================================
-   PORTFOLIO.CSS — Estilos e Cores para o Novo Portfólio Integrado
-   Integração do Design Tailwind com as Cores de base.css
-======================================= */
-
-body.light-mode {
-    --bg-main: #f5f5f7;
-    --bg-card: #ffffff;
-    --bg-card-hover: #f1f1f3;
-    --border-color: #e5e5e7;
-    --text-main: #1d1d1f;
-    --text-sec: #424245;
-    --text-mut: #6e6e73;
-    --accent: #3e6a8e;        /* Substitui o Emerald do Tailwind no modo claro */
-    --accent-hover: #2c3e50;
-    --accent-light: rgba(62, 106, 142, 0.1); /* Emerald 500/10 */
-    --accent-glow: rgba(62, 106, 142, 0.2); 
-    --glass-bg: rgba(255, 255, 255, 0.8);
-}
-
-body.dark-mode {
-    --bg-main: #0d1117; 
-    --bg-card: #1c2128; /* Fundo minimamente mais claro para as caixas/cards destacarem melhor do fundo e não ficarem no escuro */
-    --bg-card-hover: rgba(255, 255, 255, 0.08); /* Foco um pouco mais vivo ao passar o mouse */
-    --border-color: #3b424d; /* Bordas um milímetro mais visíveis */
-    --text-main: #ffffff; /* Brancão puro pra garantir leitura de títulos */
-    --text-sec: #c9d1d9; /* Cinza prateado muito mais claro para textos menores */
-    --text-mut: #a3a3a3;
-    --accent: var(--accent-cyan); /* #95fdf5 */
-    --accent-hover: #75dbd3;
-    --accent-light: rgba(149, 253, 245, 0.15); /* Mais luz de glow */
-    --accent-glow: rgba(149, 253, 245, 0.25);
-    --glass-bg: rgba(13, 17, 23, 0.8);
-}
-
-/* Base resets handled by Tailwind but applied globally */
-::selection {
-    background-color: var(--accent-glow);
-}
-
-/* Fix z-index for fixed navbar */
-nav.fixed {
-    z-index: 100;
-}
-
-/* Animações e efeitos personalizados (mantidos do design novo) */
-@keyframes spin-slow {
-    from {
-        transform: translate(-50%, -50%) rotate(0deg);
-    }
-    to {
-        transform: translate(-50%, -50%) rotate(360deg);
-    }
-}
-
-@keyframes spin-slow-reverse {
-    from {
-        transform: translate(-50%, -50%) rotate(360deg);
-    }
-    to {
-        transform: translate(-50%, -50%) rotate(0deg);
-    }
-}
-
-.animate-spin-slow {
-    animation: spin-slow 10s linear infinite;
-}
-
-.animate-spin-reverse-slow {
-    animation: spin-slow-reverse 15s linear infinite;
-}
-
-/* Gradient Hero overrides */
-.hero-gradient {
-    background: linear-gradient(to top right, var(--accent-glow), rgba(59, 130, 246, 0.2));
-}.professional-note { min-height: 390px; padding: 48px 40px; border-left: 3px solid var(--accent); background: var(--bg-card); border-radius: 0 20px 20px 0; position: relative; }
-.professional-note h2 { font-size: 2.7rem; line-height: 1.15; margin: 35px 0 24px; font-weight: 700; }
-.professional-note p { color: var(--text-sec); line-height: 1.8; margin-bottom: 28px; }
-.professional-note a { text-decoration: underline; text-underline-offset: 4px; }
-.project-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; }
-.project-diagram { padding: 36px 28px; background: var(--accent-light); color: var(--text-main); font: 600 1rem/1.7 monospace; border-bottom: 1px solid var(--border-color); }
-.project-content { padding: 28px; }
-.project-content h3 { font-size: 1.6rem; font-weight: 700; margin: 14px 0 24px; }
-.project-content dt { font-weight: 700; margin-top: 18px; }
-.project-content dd { color: var(--text-sec); line-height: 1.7; margin: 5px 0 0; }
-.project-tags { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; margin: 24px 0; }
-.project-tags li { padding: 5px 10px; border: 1px solid var(--border-color); border-radius: 6px; font-size: .8rem; }
-body.dark-mode .bg-accent.text-white { color: #0d1117; }
-#servicos .grid > div:nth-child(2) { border-top: 3px solid var(--accent); }
+﻿/* Portfolio-specific layout; common colors and cards live in base.css. */
+.portfolio-hero { padding-bottom: 64px; }
+.portfolio-opening { display: grid; grid-template-columns: 1.05fr 1fr; gap: 64px; align-items: center; }
+.portfolio-intro h1 { font-size: clamp(2.7rem,5vw,4.4rem); font-weight: 700; letter-spacing: -.05em; line-height: 1.05; margin-bottom: 24px; }
+.portfolio-intro h1 span { color: var(--accent); }
+.portfolio-intro > p:not(.eyebrow) { max-width: 540px; font-size: 1.05rem; color: var(--text-sec); line-height: 1.8; margin-bottom: 28px; }
+#portfolio { border-top: 1px solid var(--border-color); }
 #projects-container { align-items: start; }
+.areas-section { background: var(--bg-card); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
+#servicos .grid > div { border-radius: var(--radius); background: var(--bg-main); padding: 28px; }
+#servicos .grid > div:nth-child(2) { border-top: 3px solid var(--accent); }
+.scope-note { max-width: 780px; color: var(--text-sec); font-size: .85rem; line-height: 1.8; margin: 28px 0 0; }
+.about-section h2 { letter-spacing: -.035em; }
+.about-section .space-y-4 { font-size: 1rem; }
+@media (max-width: 900px) { .portfolio-opening { grid-template-columns: 1fr; gap: 40px; } #featured-project { max-width: 620px; width: 100%; } }
+@media (max-width: 480px) { .portfolio-intro .actions a { width: 100%; } }

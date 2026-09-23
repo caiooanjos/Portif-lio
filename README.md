@@ -46,7 +46,7 @@ Para retirar uma publicação da vitrine, use `status: 'draft'` ou remova o obje
 
 ## Projetos e evidências
 
-Os dois projetos da vitrine estão em `portfolio/portfolio.js`. O link do portfólio corresponde ao remote origin: https://github.com/caiooanjos/Portif-lio.
+Os dois projetos da vitrine estão em `assets/js/projects.js`, fonte compartilhada pela home e pelo portfólio. Esse arquivo também define as variantes dos cartões; `portfolio/portfolio.js` monta a seleção e o destaque. O link do portfólio corresponde ao remote origin: https://github.com/caiooanjos/Portif-lio.
 Os quatro antigos cartões “Em breve” estão preservados em `drafts/projects.json`, com status draft e aviso de que as descrições não foram confirmadas. Eles não são carregados pelo site.
 
 Antes de publicar esses estudos, fornecer código ou documentação, confirmar o que foi executado e identificar explicitamente simulações e trabalhos em andamento. Capturas reais e resultados mensuráveis podem ser acrescentados quando disponíveis. Não há métricas ou casos de clientes novos nesta revisão.
@@ -60,7 +60,7 @@ Antes de publicar esses estudos, fornecer código ou documentação, confirmar o
 - `drafts/`: modelo editorial e projetos ainda sem evidências.
 - `lab/`: acesso antigo preservado por encaminhamento.
 
-O portfólio mantém as dependências externas existentes de Tailwind e Lucide. A página inicial mantém fontes e ícones externos. O Bunker usa fontes do sistema e não depende de serviços externos para renderizar seu conteúdo.
+O portfólio mantém as dependências externas existentes de Tailwind e Lucide. Todas as páginas compartilham a fonte Inter já usada pela home, com fallback local Segoe UI/sans-serif. O Bunker mantém Georgia nos títulos editoriais. Os ícones da home são SVGs locais.
 
 ## Verificação desta revisão
 
@@ -71,3 +71,16 @@ O portfólio mantém as dependências externas existentes de Tailwind e Lucide. 
 - Catálogo testado com dados temporários apenas no navegador: publicação exibida em destaque e recentes; rascunho, data futura e data impossível excluídos. Nenhum conteúdo de teste foi publicado ou salvo no catálogo.
 - Sem exceções JavaScript nas páginas testadas. O aviso preexistente de uso do CDN Tailwind em produção permanece; não foi introduzido build nesta etapa.
 - Sintaxe JavaScript e git diff --check verificados. Nada foi enviado à hospedagem, nem houve push ou merge.
+
+
+## Refinamento visual
+
+Cores, largura de 1120 px, tipografia, espaçamento, cabeçalho, botões, cartões e rodapé são definidos em `assets/css/base.css`. `hub.css`, `portfolio.css` e `bunker.css` ficam responsáveis pelas particularidades de cada área. As imagens e camadas de iluminação do banner foram preservadas.
+
+A home mostra até dois projetos da fonte compartilhada, uma entrada para o Bunker e contato profissional. A abertura do portfólio destaca o Lead Qualifier; sua ficha abaixo acrescenta contribuição, tecnologias e evidências expansíveis. Os quatro rascunhos continuam fora da vitrine.
+
+`assets/js/publications.js` centraliza a validação das publicações para o Bunker e a home: somente entradas publicadas com data válida não futura aparecem. Quando existir conteúdo publicado, a home mostra o destaque ou a publicação mais recente.
+
+Verificações do refinamento: comparação de capturas antes/depois; home, portfólio e Bunker em 320, 390, 768 e 1366 px, nos dois temas, sem rolagem horizontal. Cabeçalhos com mesma altura e posição da marca, fonte de navegação e raio dos botões conferidos. Menu, Tab, Escape, retorno de foco, persistência de tema, links em subdiretório, /lab/, detalhes expansíveis e movimento reduzido verificados no navegador. Listagem e destaque da home testados com dados temporários em memória, sem publicar conteúdo. Links internos sem falhas e nenhuma exceção JavaScript detectada. Permanece o aviso preexistente do CDN Tailwind.
+
+Ainda faltam capturas reais dos projetos, métricas ou resultados adicionais que possam ser comprovados e as primeiras publicações autorais. Os diagramas atuais representam o fluxo dos projetos; não são capturas de telas.

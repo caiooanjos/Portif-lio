@@ -1,257 +1,40 @@
-/* ========================================
-   HUB.CSS — Estilos específicos da página HUB
-======================================== */
-
-/* Hero HUB */
-.hub-hero {
-    position: relative;
-    height: 100vh;
-    min-height: 600px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 10%;
-    overflow: hidden;
-}
-
-/* Background Layers — mesmo sistema do portfólio */
-.hero-background-layer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    transition: opacity var(--transition-speed);
-}
-
-/* TEMA CLARO */
-body.light-mode .hero-background-layer.layer-1 {
-    background-image: url('../img/Background Claro.png');
-    z-index: 1;
-    opacity: 1;
-}
-
-body.light-mode .hero-background-layer.layer-2 {
-    background-image: url('../img/Feixes de luz.png');
-    z-index: 2;
-    opacity: 0.6;
-    mix-blend-mode: overlay;
-}
-
-body.light-mode .hero-background-layer.layer-3,
-body.light-mode .hero-background-layer.layer-4 {
-    display: none;
-}
-
-/* TEMA DARK */
-body.dark-mode .hero-background-layer.layer-1 {
-    background-image: url('../img/Background DevSec.png');
-    z-index: 1;
-    opacity: 1;
-}
-
-body.dark-mode .hero-background-layer.layer-2 {
-    background-image: url('../img/Feixes de luz.png');
-    z-index: 2;
-    opacity: 1;
-    mix-blend-mode: screen;
-}
-
-body.dark-mode .hero-background-layer.layer-3 {
-    background-image: url('../img/Homem Luz de fundo.png');
-    z-index: 3;
-    opacity: 1;
-}
-
-body.dark-mode .hero-background-layer.layer-4 {
-    background-image: url('../img/Contraste.png');
-    z-index: 4;
-    opacity: 1;
-    mix-blend-mode: overlay;
-}
-
-/* Hub Content */
-.hub-content {
-    text-align: center;
-    z-index: 10;
-    position: relative;
-    max-width: 700px;
-    padding: 40px;
-    border-radius: 24px;
-    border: 1px solid transparent;
-    transition: background 0.3s, backdrop-filter 0.3s, border-color 0.3s, box-shadow 0.3s, padding 0.3s;
-}
-
-/* Glassmorphism escuro no Tema Claro para destacar o texto */
-body.light-mode .hub-content {
-    background: rgba(0, 0, 0, 0.45);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-color: rgba(255, 255, 255, 0.15);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-}
-
-body.light-mode .hub-content h1,
-body.light-mode .hub-content .hub-subtitle,
-body.light-mode .hub-content .hub-description {
-    color: #ffffff;
-}
-
-.hub-content h1 {
-    font-size: 4.5rem;
-    font-weight: 700;
-    margin: 0 0 15px;
-    letter-spacing: -1px;
-}
-
-body.dark-mode .hub-content h1 {
-    color: var(--accent-cyan);
-}
-
-.hub-subtitle {
-    font-size: 1.2rem;
-    font-weight: 500;
-    margin: 0 0 20px;
-    opacity: 0.85;
-    letter-spacing: 0.5px;
-}
-
-.hub-description {
-    font-size: 1.05rem;
-    line-height: 1.7;
-    margin: 0 auto 40px;
-    max-width: 500px;
-    opacity: 0.7;
-}
-
-/* Hub Buttons */
-.hub-buttons {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.btn-lg {
-    padding: 16px 32px;
-    font-size: 1.1rem;
-    border-radius: 35px;
-}
-
-/* ========================================
-   SOCIAL SECTION
-======================================== */
-
-.hub-social {
-    padding: 80px 10%;
-    text-align: center;
-}
-
-.hub-social-title {
-    font-size: 1.75rem;
-    font-weight: 600;
-    margin: 0 0 40px;
-}
-
-body.dark-mode .hub-social-title {
-    color: var(--accent-cyan);
-}
-
-.hub-social-links {
-    display: flex;
-    gap: 25px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.social-card {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 18px 30px;
-    border-radius: 12px;
-    font-size: 1rem;
-    font-weight: 500;
-    transition: transform 0.2s, box-shadow 0.3s;
-    text-decoration: none;
-    color: inherit;
-}
-
-body.light-mode .social-card {
-    background-color: #ffffff;
-    border: 1px solid #e5e5e7;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-body.dark-mode .social-card {
-    background-color: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-.social-card:hover {
-    transform: translateY(-3px);
-}
-
-body.light-mode .social-card:hover {
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-}
-
-body.dark-mode .social-card:hover {
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
-}
-
-/* ========================================
-   RESPONSIVE
-======================================== */
-
+﻿/* Original cinematic composition; shared components continue below it. */
+.hub-hero { position: relative; min-height: 90svh; display: flex; align-items: center; justify-content: center; padding: 140px var(--gutter) 100px; overflow: hidden; }
+.hero-background-layer { position: absolute; inset: 0; background-size: cover; background-position: center; background-repeat: no-repeat; transition: opacity var(--transition-speed); }
+.light-mode .layer-1 { background-image: url('../img/Background Claro.png'); z-index: 1; }
+.light-mode .layer-2 { background-image: url('../img/Feixes de luz.png'); z-index: 2; opacity: .6; mix-blend-mode: overlay; }
+.light-mode .layer-3, .light-mode .layer-4 { display: none; }
+.dark-mode .layer-1 { background-image: url('../img/Background DevSec.png'); z-index: 1; }
+.dark-mode .layer-2 { background-image: url('../img/Feixes de luz.png'); z-index: 2; mix-blend-mode: screen; }
+.dark-mode .layer-3 { background-image: url('../img/Homem Luz de fundo.png'); z-index: 3; }
+.dark-mode .layer-4 { background-image: url('../img/Contraste.png'); z-index: 4; mix-blend-mode: overlay; }
+.hub-hero::after { content: ''; position: absolute; inset: auto 0 0; height: 100px; z-index: 5; background: linear-gradient(transparent, var(--bg-main)); pointer-events: none; }
+.hub-content { position: relative; z-index: 10; max-width: 700px; padding: 40px; text-align: center; border-radius: 24px; color: #fff; background: rgba(13,17,23,.8); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,.2); box-shadow: 0 8px 32px rgba(0,0,0,.2); }
+.dark-mode .hub-content { background: rgba(13,17,23,.86); }
+.hub-content h1 { font-size: clamp(2.6rem, 6vw, 4.5rem); font-weight: 700; margin: 0 0 18px; letter-spacing: -.04em; }
+.dark-mode .hub-content h1 { color: var(--accent-cyan); }
+.hub-subtitle { font-size: 1.12rem; font-weight: 500; line-height: 1.55; margin-bottom: 20px; }
+.hub-description { font-size: 1rem; line-height: 1.75; margin: 0 auto 28px; max-width: 480px; color: #e4edf4; }
+.hub-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.hub-content .btn-secondary { background: #e7edf2; color: #20272f; border-color: #e7edf2; }
+.hub-content .btn-secondary:hover { background: #fff; }
+.hub-content :focus-visible { outline-color: #95fdf5; }
+.bunker-entry { border-top: 1px solid var(--border-color); }
+.bunker-invitation { display: grid; grid-template-columns: .8fr 1.2fr; gap: 64px; align-items: center; background: #eee6d8; color: #302a25; border: 1px solid #cbbda6; border-radius: var(--radius); padding: 48px; }
+.bunker-invitation h2 { font: 400 clamp(3rem,6vw,4.8rem)/1 Georgia, serif; letter-spacing: -.05em; margin-bottom: 24px; }
+.bunker-invitation .eyebrow { color: #85520c; }
+.bunker-invitation p { max-width: 520px; }
+.bunker-invitation .format-line { font-size: .82rem; color: #675a4b; }
+.dark-mode .bunker-invitation { background: #28231d; color: #f3ede1; border-color: #625440; }
+.dark-mode .bunker-invitation .eyebrow { color: #efbb65; }
+.dark-mode .bunker-invitation .format-line { color: #c5b8a4; }
+#home-publication:not([hidden]) { border-top: 1px solid currentColor; margin-top: 28px; padding-top: 20px; }
+#home-publication h3 { font: 400 1.5rem/1.3 Georgia, serif; }
 @media (max-width: 768px) {
-    .hub-content h1 {
-        font-size: 2.8rem;
-    }
-
-    .hub-hero {
-        padding: 0 5%;
-    }
-
-    .hub-subtitle {
-        font-size: 1rem;
-    }
-
-    .hub-description {
-        font-size: 0.95rem;
-    }
-
-    .btn-lg {
-        padding: 14px 26px;
-        font-size: 1rem;
-    }
-
-    .hub-social {
-        padding: 60px 5%;
-    }
-
-    .hub-social-links {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .social-card {
-        width: 100%;
-        max-width: 280px;
-        justify-content: center;
-    }
-}/* Keep the introduction legible on narrow and short screens. */
-.hub-hero { height: auto; min-height: 90svh; padding-top: 130px; padding-bottom: 70px; }
-.hub-description { opacity: 1; }
-.hub-subtitle { opacity: 1; }
-body.dark-mode .hub-content { background: rgba(13,17,23,.9); }
-body.light-mode .hub-content { background: rgba(13,17,23,.82); }
-@media (max-width: 480px) {
-    .hub-content { padding: 25px 18px; }
-    .hub-buttons a { width: 100%; justify-content: center; }
-    .hub-content h1 { font-size: 2.6rem; }
+    .hub-hero { min-height: 85svh; padding: 120px var(--gutter) 80px; }
+    .hub-content { padding: 28px 20px; }
+    .hub-subtitle { font-size: .95rem; }
+    .hub-description { font-size: .92rem; }
+    .bunker-invitation { grid-template-columns: 1fr; gap: 12px; padding: 28px; }
 }
+@media (max-width: 480px) { .hub-buttons a { width: 100%; } }

@@ -16,6 +16,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
+            corePlugins: { preflight: false },
             theme: {
                 extend: {
                     colors: {
@@ -42,9 +43,9 @@
 <meta property="og:title" content="Caio Anjos — Portfólio">
 <meta property="og:description" content="Desenvolvo. Protejo. Investigo. Projetos e atuação com foco em segurança da informação.">
 <link rel="icon" type="image/png" href="../assets/img/Logo.png">
-</head>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></head>
 
-<body class="dark-mode bg-main text-main font-main transition-colors duration-300">
+<body class="light-mode portfolio-page">
 <a class="skip-link" href="#main">Pular para o conteúdo</a>
  <div class="nav-overlay"></div><header>
  <div class="logo-container"><a href="../index.html" aria-label="Caio Anjos — início"><img src="../assets/img/Logo.png" alt="" class="logo"><span class="brand-name">Caio Anjos</span></a></div>
@@ -52,147 +53,62 @@
  <nav id="site-nav" aria-label="Navegação principal"><ul><li><a href="../index.html" >Início</a></li><li><a href="../portfolio/" aria-current="page">Portfólio</a></li><li><a href="../bunker/" >Bunker</a></li>
  <li><button id="theme-toggle" class="btn-icon" aria-label="Alternar tema"><span class="sun-icon">Tema claro</span><span class="moon-icon">Tema escuro</span></button></li></ul></nav></header>
 
-    <main id="main" tabindex="-1" class="overflow-x-hidden pt-20">
-        <!-- HERO SECTION -->
-        <section class="relative pt-20 pb-20 lg:pt-32 lg:pb-32 px-6">
-            <div
-                class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-accentLight blur-[120px] rounded-full pointer-events-none">
-            </div>
-
-            <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center relative z-10">
-                <div class="space-y-8">
-                    <div
-                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-card border border-borderMod text-sm font-medium text-accent hover:border-accent transition-colors">
-                        <span class="relative flex h-2 w-2">
-                            <span
-                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
-                            <span class="relative inline-flex rounded-full h-2 w-2 bg-accentHover"></span>
-                        </span>
-                        Disponível para novos projetos
-                    </div>
-
-                    <h1 class="text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] text-main">
-                        Desenvolvo. <br />
-                        <span class="text-accent">Protejo.</span>
-                        <br />
-                        Investigo.
-                    </h1>
-
-                    <p class="text-lg text-sec leading-relaxed max-w-lg">
-                        Meu foco é segurança da informação. Desenvolvo sistemas e automações, estudo práticas de proteção e pesquiso informações de fontes abertas para apoiar investigações digitais.
-                    </p>
-
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="#portfolio"
-                            class="px-8 py-4 bg-accent text-white rounded-lg font-bold hover:bg-accentHover transition-colors flex items-center justify-center gap-2">
-                            Ver projetos
-                            <i data-lucide="chevron-right" class="w-5 h-5"></i>
-                        </a>
-                        <a href="#contato"
-                            class="px-8 py-4 bg-card text-main border border-borderMod rounded-lg font-bold hover:bg-cardHover transition-colors flex items-center justify-center gap-2">
-                            Conversar sobre um projeto
-                        </a>
-                    </div>
-                </div>
-
-                <div class="relative hidden lg:block">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-tr from-accentLight to-transparent rounded-2xl blur-2xl">
-                    </div>
-                    <div class="professional-note"><span class="eyebrow">Caio Anjos / Portfólio</span><h2>Segurança como ponto de partida.</h2><p>Desenvolvimento para construir.<br>Investigação para compreender.</p><a href="#servicos">Conheça minhas áreas de atuação ↓</a></div>
-                    <div
-                        class="absolute -bottom-6 -left-6 bg-card border border-borderMod p-4 rounded-xl shadow-xl flex items-center gap-4 z-20">
-                        <div class="p-3 bg-accentLight text-accent rounded-lg">
-                            <i data-lucide="shield-check" class="w-6 h-6"></i>
-                        </div>
-                        <div>
-                            <p class="text-sm text-sec font-medium">Foco em</p>
-                            <p class="text-main font-bold">Segurança & OSINT</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SEÇÃO DE PILARES -->
-        <section id="servicos" class="py-24 bg-cardHover border-y border-borderMod relative">
-            <div class="max-w-6xl mx-auto px-6">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-main">Três áreas, um trabalho cuidadoso</h2>
+    <main id="main" tabindex="-1">
+<section class="portfolio-hero section"><div class="site-container portfolio-opening"><div class="portfolio-intro"><p class="eyebrow">Caio Anjos / Portfólio</p><h1>Desenvolvo.<br><span>Protejo.</span><br>Investigo.</h1><p>Meu foco é segurança da informação. Desenvolvo sistemas e automações e pesquiso fontes abertas para apoiar investigações digitais.</p><div class="actions"><a href="#portfolio" class="btn-primary">Ver projetos</a><a href="#contato" class="btn-secondary">Conversar sobre um projeto</a></div></div><div id="featured-project"></div></div></section>
+<section id="portfolio" class="section"><div class="site-container"><div class="section-heading"><p class="eyebrow">Projetos selecionados</p><h2>O trabalho, em detalhe.</h2><p>Objetivos, contribuições e código para conhecer cada projeto.</p></div><div class="projects-grid" id="projects-container"></div><noscript><a href="https://github.com/caiooanjos">Consulte meus projetos no GitHub.</a></noscript></div></section>
+<section id="servicos" class="section areas-section">
+            <div class="site-container">
+                <div class="section-heading">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-main">Áreas de atuação</h2>
                     <p class="text-sec text-lg">
-                        Segurança da informação é meu principal interesse profissional. Desenvolvimento e investigação digital complementam esse foco, com escopos definidos e atenção aos limites de cada trabalho.
+                        Segurança como foco, desenvolvimento para construir e investigação para compreender.
                     </p>
                 </div>
 
                 <div class="grid md:grid-cols-3 gap-8">
                     <div
                         class="bg-card border border-borderMod p-8 rounded-2xl hover:border-accent transition-colors group relative overflow-hidden">
-                        <div class="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
-                            <i data-lucide="terminal" class="w-8 h-8 text-accent"></i>
-                        </div>
+
                         <div class="mb-6 inline-block p-4 bg-bg-main rounded-xl border border-borderMod">
                             <i data-lucide="terminal" class="w-8 h-8 text-accent"></i>
                         </div>
                         <h3 class="text-xl font-bold mb-3 text-main">Desenvolvimento de Sistemas</h3>
                         <p class="text-sec leading-relaxed">
-                            Aplicações web, sites e automações. Os projetos abaixo mostram meu trabalho com HTML, CSS, JavaScript e Python, com código disponível para consulta.
+                            Sites, sistemas e automações com HTML, CSS, JavaScript e Python. Os projetos publicados mostram essas tecnologias em uso.
                         </p>
                     </div>
 
                     <div
                         class="bg-card border border-borderMod p-8 rounded-2xl hover:border-accent transition-colors group relative overflow-hidden">
-                        <div class="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
-                            <i data-lucide="shield-check" class="w-8 h-8 text-accent"></i>
-                        </div>
+
                         <div class="mb-6 inline-block p-4 bg-bg-main rounded-xl border border-borderMod">
                             <i data-lucide="shield-check" class="w-8 h-8 text-accent"></i>
                         </div>
                         <h3 class="text-xl font-bold mb-3 text-main">Segurança da Informação</h3>
                         <p class="text-sec leading-relaxed">
-                            Meu foco de estudo e aplicação: práticas de proteção, identificação de vulnerabilidades, análise de riscos e recomendações de melhoria. Cada demanda é avaliada conforme minha experiência e um escopo autorizado.
+                            Práticas de proteção, análise de riscos, identificação de vulnerabilidades e recomendações de melhoria: meu foco de estudo e aplicação.
                         </p>
                     </div>
 
                     <div
                         class="bg-card border border-borderMod p-8 rounded-2xl hover:border-accent transition-colors group relative overflow-hidden">
-                        <div class="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
-                            <i data-lucide="search" class="w-8 h-8 text-accent"></i>
-                        </div>
+
                         <div class="mb-6 inline-block p-4 bg-bg-main rounded-xl border border-borderMod">
                             <i data-lucide="search" class="w-8 h-8 text-accent"></i>
                         </div>
                         <h3 class="text-xl font-bold mb-3 text-main">Investigação Digital & OSINT</h3>
                         <p class="text-sec leading-relaxed">
-                            Pesquisa e análise de fontes abertas, organização de achados e documentação para apoiar a compreensão de situações e decisões. Disponível para avaliar demandas de pessoas, empresas e profissionais como advogados, dentro das minhas competências e de escopos autorizados.
+                            Pesquisa de fontes abertas, análise de informações e documentação de achados para apoiar pessoas, empresas e profissionais como advogados.
                         </p>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- PORTFÓLIO & ESTUDOS DE CASO -->
-        <section id="portfolio" class="py-24 px-6 relative">
-            <div class="max-w-6xl mx-auto">
-                <div class="text-center max-w-3xl mx-auto mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-main">Projetos com código disponível</h2>
-                    <p class="text-sec text-lg">
-                        Uma seleção do que desenvolvi, com objetivos, tecnologias e caminhos para consultar o trabalho.
-                    </p>
-                </div>
-
-                <!-- Projetos com evidências; planos ficam em drafts/projects.json. -->
-                <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8" id="projects-container">
-                </div>
-            </div>
-        </section>
-
-        <!-- SOBRE MIM & TECH STACK -->
-        <section id="about" class="py-24 px-6 bg-cardHover border-y border-borderMod">
-            <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+                </div><p class="scope-note">Trabalho com escopo autorizado e entregas compatíveis com minha experiência comprovada. Definimos esses limites na conversa inicial.</p></div></section>
+<!-- SOBRE MIM & TECH STACK -->
+        <section id="about" class="section about-section">
+            <div class="site-container grid lg:grid-cols-2 gap-16 items-center">
                 <div class="order-2 lg:order-1 space-y-8">
                     <div>
                         <h2 class="text-3xl md:text-4xl font-bold mb-6 text-main">Sobre meu trabalho</h2>
-                        <div class="space-y-4 text-sec leading-relaxed text-lg"><p>Sou <strong>Caio Anjos</strong>. Meu interesse principal é segurança da informação, conectado ao desenvolvimento de sistemas e à investigação digital.</p><p>Quero construir soluções com atenção à proteção das informações e documentar o processo de aprender. Os projetos publicados são o ponto de partida para conhecer meu trabalho.</p><p>No <a class="inline-link" href="../bunker/">Bunker</a>, compartilho espaço para histórias, experiências e estudos. Para demandas profissionais, podemos conversar sobre a necessidade, o contexto e o que consigo entregar.</p></div>
+                        <div class="space-y-4 text-sec leading-relaxed text-lg"><p>Sou <strong>Caio Anjos</strong>. Construir soluções e documentar o processo de aprender são partes do meu trabalho.</p><p>No <a class="inline-link" href="../bunker/">Bunker</a>, esse processo ganha espaço para histórias, experiências e estudos que vão além dos projetos profissionais.</p></div>
                     </div>
 
                     <div>
@@ -251,68 +167,22 @@
                                 alt="Caio Anjos"
                                 class="w-full h-full object-cover rounded-full mix-blend-luminosity hover:mix-blend-normal transition-all duration-500" />
                         </div>
-                        <div
-                            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] border border-borderMod rounded-full animate-spin-slow">
-                        </div>
-                        <div
-                            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] border border-accentLight rounded-full animate-spin-reverse-slow">
-                        </div>
+
+
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- CTA FINAL -->
-        <section id="contato" class="py-24 relative overflow-hidden text-center">
-            <div class="absolute inset-0 bg-accentLight/50"></div>
-            <div class="max-w-4xl mx-auto px-6 relative z-10">
-                <i data-lucide="shield-check" class="w-16 h-16 text-accent mx-auto mb-6"></i>
-                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-main">Vamos conversar sobre sua necessidade?
-                </h2>
-                <p class="text-xl text-sec mb-10 max-w-2xl mx-auto">
-                    Conte o que você precisa desenvolver, proteger ou compreender. A partir disso, avaliamos o escopo e a possibilidade de trabalho.
-                </p>
+<section id="contato" class="section contact-section"><div class="site-container contact-inner"><div class="contact-copy"><p class="eyebrow">Vamos conversar</p><h2>Tem um projeto em mente?</h2><p>Conte o que você precisa desenvolver, proteger ou compreender.</p></div><a class="btn-primary" href="mailto:caioanjos@souaglaia.com">Conversar sobre um projeto</a></div></section>
+</main>
 
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="mailto:caioanjos@souaglaia.com"
-                        class="px-8 py-4 bg-accent text-white rounded-lg font-bold hover:bg-accentHover transition-colors flex items-center justify-center gap-3 text-lg">
-                        <i data-lucide="mail" class="w-5 h-5"></i>
-                        Conversar sobre um projeto
-                    </a>
-                    <a aria-label="LinkedIn" href="https://www.linkedin.com/in/caiooanjo/" target="_blank" rel="noreferrer"
-                        class="px-8 py-4 bg-card text-main border border-borderMod rounded-lg font-bold hover:bg-cardHover transition-colors flex items-center justify-center gap-3 text-lg">
-                        Conectar no LinkedIn
-                    </a>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="site-footer bg-main flex flex-col md:flex-row justify-between items-center px-6">
-        <p>&copy; 2026 Caio Anjos. Desenvolvimento, segurança e investigação digital.</p>
-        <div class="flex flex-wrap justify-center items-center gap-4 mt-4 md:mt-0">
-            <a aria-label="Site" href="https://caioanjos.online" class="text-sec hover:text-main transition-colors">
-                <i data-lucide="globe" class="w-6 h-6"></i>
-            </a>
-            <a aria-label="GitHub" href="https://github.com/caiooanjos" class="text-sec hover:text-main transition-colors">
-                <span>GitHub</span>
-            </a>
-            <a aria-label="LinkedIn" href="https://www.linkedin.com/in/caiooanjo/" class="text-sec hover:text-[#0A66C2] transition-colors">
-                <span>LinkedIn</span>
-            </a>
-            <a aria-label="Instagram" href="https://instagram.com/oanjoscaio" class="text-sec hover:text-[#E1306C] transition-colors">
-                <span>Instagram</span>
-            </a>
-            <a aria-label="YouTube" href="https://www.youtube.com/@ocaioanjos" class="text-sec hover:text-[#FF0000] transition-colors">
-                <span>YouTube</span>
-            </a>
-        </div>
-    </footer>
+    <footer class="site-footer"><div class="site-container footer-inner"><p>© 2026 Caio Anjos</p><div class="social-links" aria-label="Redes e contato"><a href="https://caioanjos.online">Site</a><a href="https://github.com/caiooanjos">GitHub</a><a href="https://www.linkedin.com/in/caiooanjo/">LinkedIn</a><a href="https://instagram.com/oanjoscaio">Instagram</a><a href="https://www.youtube.com/@ocaioanjos">YouTube</a></div></div></footer>
 
     <!-- Scripts necessários para o funcionamento -->
     <script src="../assets/js/base.js"></script>
-    <script src="portfolio.js"></script>
+    <script src="../assets/js/projects.js"></script>
+<script src="portfolio.js"></script>
 </body>
 
 </html>

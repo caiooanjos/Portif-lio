@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
@@ -17,7 +17,7 @@
 <link rel="icon" type="image/png" href="assets/img/Logo.png">
 </head>
 
-<body class="light-mode">
+<body class="light-mode home-page">
 <a class="skip-link" href="#main">Pular para o conteúdo</a>
  <div class="nav-overlay"></div><header>
  <div class="logo-container"><a href="index.html" aria-label="Caio Anjos — início"><img src="assets/img/Logo.png" alt="" class="logo"><span class="brand-name">Caio Anjos</span></a></div>
@@ -37,7 +37,7 @@
                 <h1>Caio Anjos</h1>
                 <p class="hub-subtitle">Desenvolvimento | Segurança da Informação | Investigação Digital</p>
                 <p class="hub-description">
-                    No portfólio, meus projetos de desenvolvimento e meu foco em segurança da informação e investigação digital. No Bunker, histórias, experiências e aprendizados que quero compartilhar.
+                    Meu foco é segurança. Aqui estão os projetos que desenvolvo e, no Bunker, as histórias e os aprendizados pelo caminho.
                 </p>
 
                 <div class="hub-buttons">
@@ -65,52 +65,14 @@
             </div>
         </section>
 
-        <!-- Links Sociais -->
-        <section class="hub-social">
-            <h2 class="hub-social-title">Conecte-se</h2>
-            <div class="hub-social-links" style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-                <a href="https://caioanjos.online" target="_blank" rel="noopener noreferrer" class="social-card" style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
-                    <i data-lucide="globe" style="width: 28px; height: 28px;"></i>
-                    <span>Site</span>
-                </a>
-                <a href="https://github.com/caiooanjos" target="_blank" rel="noopener noreferrer" class="social-card" style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+<section class="section"><div class="site-container"><div class="section-heading"><p class="eyebrow">Do código à prática</p><h2>Projetos selecionados</h2><p>Sistemas e automações com código disponível para consulta.</p></div><div id="home-projects" class="projects-grid"></div><noscript><p><a class="inline-link" href="https://github.com/caiooanjos">Consulte meus projetos no GitHub.</a></p></noscript><div class="section-tail"><a class="inline-link" href="portfolio/#portfolio">Conheça os projetos em detalhe →</a></div></div></section>
+<section class="section bunker-entry"><div class="site-container bunker-invitation"><div><p class="eyebrow">O caderno aberto</p><h2>Bunker.</h2><p class="format-line">Registros · Contos · Experimentos</p></div><div><p>Um espaço para histórias, experiências e aprendizados. Dos estudos de tecnologia às reflexões da vida, um lugar para compartilhar o processo.</p><a class="btn-secondary" href="bunker/">Entrar no Bunker</a><div id="home-publication" hidden></div></div></div></section>
+<section id="contato" class="section contact-section"><div class="site-container contact-inner"><div class="contact-copy"><p class="eyebrow">Vamos conversar</p><h2>Tem um projeto em mente?</h2><p>Conte o que você precisa desenvolver, proteger ou compreender.</p></div><a class="btn-primary" href="mailto:caioanjos@souaglaia.com">Conversar sobre um projeto</a></div></section></main>
 
-                    <span>GitHub</span>
-                </a>
-                <a href="https://www.linkedin.com/in/caiooanjo/" target="_blank" rel="noopener noreferrer" class="social-card" style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
-
-                    <span>LinkedIn</span>
-                </a>
-                <a href="https://instagram.com/oanjoscaio" target="_blank" rel="noopener noreferrer" class="social-card" style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
-
-                    <span>Instagram</span>
-                </a>
-                <a href="https://www.youtube.com/@ocaioanjos" target="_blank" rel="noopener noreferrer" class="social-card" style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
-
-                    <span>YouTube</span>
-                </a>
-                <a href="mailto:caioanjos@souaglaia.com" target="_blank" rel="noopener noreferrer" class="social-card" style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
-                    <i data-lucide="mail" style="width: 28px; height: 28px;"></i>
-                    <span>Email</span>
-                </a>
-            </div>
-        </section>
-    </main>
-
-    <footer class="site-footer">
-        <p>&copy; 2026 Caio Anjos. Todos os direitos reservados.</p>
-    </footer>
+    <footer class="site-footer"><div class="site-container footer-inner"><p>© 2026 Caio Anjos</p><div class="social-links" aria-label="Redes e contato"><a href="https://caioanjos.online">Site</a><a href="https://github.com/caiooanjos">GitHub</a><a href="https://www.linkedin.com/in/caiooanjo/">LinkedIn</a><a href="https://instagram.com/oanjoscaio">Instagram</a><a href="https://www.youtube.com/@ocaioanjos">YouTube</a></div></div></footer>
 
     <script src="assets/js/base.js"></script>
-    <script src="assets/js/hub.js"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            if (typeof lucide !== 'undefined') {
-                lucide.createIcons();
-            }
-        });
-    </script>
+    <script src="assets/js/projects.js"></script><script src="bunker/publications.js"></script><script src="assets/js/publications.js"></script><script src="assets/js/hub.js"></script>
 </body>
 
 </html>

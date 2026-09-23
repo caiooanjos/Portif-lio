@@ -1,32 +1,28 @@
 ﻿/* Paper, walnut, graphite and amber: the Bunker notebook. */
-body.bunker { --paper: #f3ede1; --ink: #302a25; --muted: #675a4b; --line: #cbbda6; --note: #e8deca; --amber: #85520c; --bg-light: var(--paper); --font-main: 'Segoe UI', sans-serif; background: var(--paper); color: var(--ink); }
-body.bunker.dark-mode { --paper: #211e1a; --ink: #f3ede1; --muted: #c5b8a4; --line: #625440; --note: #302a23; --amber: #efbb65; background: var(--paper); color: var(--ink); }
-.bunker header { position: relative; border-bottom: 1px solid var(--line); }
-.bunker.dark-mode nav, .bunker.light-mode nav { background: var(--paper); }
-.bunker-main { max-width: 1080px; margin: auto; padding: 0 36px; }
-.bunker-intro { max-width: 800px; padding: 80px 0 56px; }
+body.bunker { --paper: #f3ede1; --ink: #302a25; --muted: #675a4b; --line: #cbbda6; --note: #e8deca; --amber: #85520c; --bg-main: var(--paper); --bg-card: #faf6ed; --bg-card-hover: var(--note); --text-main: var(--ink); --text-sec: var(--muted); --border-color: var(--line); --accent: var(--amber); --accent-hover: #684009; --button-ink: #fff; }
+body.bunker.dark-mode { --paper: #211e1a; --ink: #f3ede1; --muted: #c5b8a4; --line: #625440; --note: #302a23; --amber: #efbb65; --bg-card: #28231d; --accent-hover: #ffd48e; --button-ink: #211e1a; }
+.bunker-main { width: min(var(--content-width), calc(100% - var(--gutter) * 2)); margin: auto; }
+.bunker-intro { max-width: 800px; padding: var(--section-space) 0 56px; }
 .bunker .eyebrow { color: var(--amber); }
 .bunker h1, .bunker h2, .bunker h3 { font-family: Georgia, 'Times New Roman', serif; font-weight: 400; }
 .bunker-intro h1 { font-size: clamp(5rem, 13vw, 9rem); letter-spacing: -.065em; line-height: 1; margin: 25px 0 32px; }
 .bunker-intro h1 span { color: var(--amber); }
 .bunker-intro .intro-copy { font-size: clamp(1.4rem, 3vw, 2rem); line-height: 1.4; color: var(--ink); }
-.bunker p { line-height: 1.8; }
+.bunker-main p { line-height: 1.8; }
 .bunker-intro > p:last-child { max-width: 620px; color: var(--muted); }
 .formats { display: grid; grid-template-columns: repeat(3,1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); gap: 35px; padding: 24px 0; }
 .formats h2 { font-size: 1.55rem; margin: 0; }
 .formats p { color: var(--muted); font-size: .95rem; margin-bottom: 0; }
-.recent { padding: 64px 0; }
+.recent { padding: var(--section-space) 0; }
 .recent > h2 { font-size: 2.2rem; }
-.empty-state { display: flex; gap: 25px; background: var(--note); padding: 34px; border-radius: 4px 20px 20px 4px; border-left: 3px solid var(--amber); }
+.empty-state { display: flex; gap: 25px; background: var(--note); padding: 34px; border-radius: var(--radius); border-left: 3px solid var(--amber); }
 .note-mark { color: var(--amber); font: 3rem Georgia,serif; }
 .empty-state h3 { font-size: 1.7rem; margin: 0; }
 .empty-state p { max-width: 650px; color: var(--muted); }
-.author { border-top: 1px solid var(--line); padding: 35px 0 50px; max-width: 740px; }
+.author { border-top: 1px solid var(--line); padding: 40px 0 var(--section-space); }
+.author p { max-width: 740px; }
 .author h2 { font-size: 2rem; }
 .author p { color: var(--muted); }
-.author-links { display: flex; flex-wrap: wrap; gap: 12px 25px; }
-.author-links a { padding: 8px 0; text-decoration: underline; text-underline-offset: 5px; }
-.bunker .site-footer { opacity: 1; color: var(--muted); border-top: 1px solid var(--line); }
 .publication-card { display: block; padding: 25px 0; border-bottom: 1px solid var(--line); }
 .publication-card h3 { font-size: 1.8rem; margin: 12px 0; }
 .publication-card p { color: var(--muted); }
@@ -45,4 +41,4 @@ body.bunker.dark-mode { --paper: #211e1a; --ink: #f3ede1; --muted: #c5b8a4; --li
 .reading figcaption { color: var(--muted); font-size: .9rem; margin-top: 10px; }
 .tags { display: flex; flex-wrap: wrap; list-style: none; gap: 10px; padding: 0; color: var(--muted); }
 .tags li { border: 1px solid var(--line); padding: 4px 10px; border-radius: 5px; }
-@media (max-width: 600px) { .bunker-main { padding-left: 22px; padding-right: 22px; } .bunker-intro { padding-top: 48px; } .formats { grid-template-columns: 1fr; gap: 24px; } .empty-state { padding: 24px; } .note-mark { display: none; } .recent { padding: 40px 0; } }
+@media (max-width: 600px) { .bunker-intro { padding-top: 48px; } .formats { grid-template-columns: 1fr; gap: 24px; } .empty-state { padding: 24px; } .note-mark { display: none; } }
